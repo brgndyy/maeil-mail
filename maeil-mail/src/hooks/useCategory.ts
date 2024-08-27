@@ -6,7 +6,8 @@ const isCategory = (value: any): value is Category => {
 };
 
 const useCategory = () => {
-  const [category, setCategory] = useState<Category>('frontend');
+  const [category, setCategory] = useState<Category | ''>('');
+  const isValidCategory = category !== '';
 
   const handleCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -16,7 +17,7 @@ const useCategory = () => {
     }
   };
 
-  return { category, handleCategory };
+  return { category, isValidCategory, handleCategory };
 };
 
 export default useCategory;
