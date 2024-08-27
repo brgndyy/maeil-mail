@@ -25,7 +25,7 @@ export const inputStyle = styleVariants({
     borderBottom: '0.1rem solid #fff',
     background: 'none',
     color: text1,
-    width: '70%',
+    textAlign: 'center',
   },
 });
 
@@ -33,4 +33,9 @@ export const baseInputStyle = style({
   ':focus': {
     outline: 'none',
   },
+});
+
+export const dangerStyle = style({
+  borderBottom: '0.01rem solid red !important',
+  color: 'red !important',
 });
