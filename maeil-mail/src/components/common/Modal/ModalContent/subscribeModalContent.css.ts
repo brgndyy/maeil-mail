@@ -1,9 +1,9 @@
 import { style } from '@vanilla-extract/css';
-import { background1, borderColor1, text1 } from '@/styles/vars.css';
+import { background1, text1 } from '@/styles/vars.css';
 
 export const container = style({
   width: '30rem',
-  height: '32rem',
+  height: '34rem',
   background: background1,
   color: text1,
   borderRadius: '1rem',
@@ -38,7 +38,7 @@ export const inputWrapper = style({
 export const buttonWrapper = style({
   display: 'flex',
   justifyContent: 'center',
-  marginTop: '2rem',
+  marginTop: '4rem',
 });
 
 export const subscriptionButton = style({
