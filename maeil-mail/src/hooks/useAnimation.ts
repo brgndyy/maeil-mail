@@ -27,12 +27,13 @@ const useAnimation = ({
   useEffect(() => {
     if (closing) {
       if (unMountAnimation) {
-        const timer = setTimeout(() => {
+        const handleAnimationEnd = () => {
           setClosing(false);
           setOpen(false);
           unMountEvent();
-        }, animationTime);
+        };
 
+        const timer = setTimeout(handleAnimationEnd, animationTime);
         return () => clearTimeout(timer);
       } else {
         setClosing(false);
@@ -40,7 +41,7 @@ const useAnimation = ({
         unMountEvent();
       }
     }
-  }, [closing, unMountAnimation]);
+  }, [closing, unMountAnimation, animationTime, unMountEvent]);
 
   return { open, closing };
 };
