@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vanilla-extract/css": "^1.15.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -17,6 +18,7 @@
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@vanilla-extract/vite-plugin": "^4.0.15",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
