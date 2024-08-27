@@ -22,10 +22,8 @@ globalStyle('button', {
 
 globalStyle('body', {
   margin: '0',
-  width: '100vw',
-  minHeight: '100vh',
-  height: 'auto',
-  overflow: 'scroll',
+  overflow: 'hidden',
+  overscrollBehavior: 'none',
   transition: 'all 0.3s ease',
   position: 'relative',
 });
