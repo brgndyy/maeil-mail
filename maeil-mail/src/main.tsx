@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import './global.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ToastContainer from './components/common/Toast/ToastContainer';
 
 const client = new QueryClient();
 
@@ -22,6 +23,7 @@ enableMocking().then(() => {
   createRoot(document.getElementById('root')!).render(
     <StrictMode>
       <QueryClientProvider client={client}>
+        <ToastContainer />
         <App />
       </QueryClientProvider>
     </StrictMode>,
