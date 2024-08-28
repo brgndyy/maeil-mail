@@ -1,18 +1,23 @@
 import { useState } from 'react';
-
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import validateEmail from '@/utils/validateEmail';
 
 const useEmail = () => {
   const [email, setEmail] = useState('');
-  const insValidEmail = emailRegex.test(email);
+  const [isTouched, setIsTouched] = useState(false);
+
+  const isValidEmail = isTouched ? validateEmail(email) : true;
 
   const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;
 
     setEmail(email);
+
+    if (!isTouched) {
+      setIsTouched(true);
+    }
   };
 
-  return { email, handleEmail, insValidEmail };
+  return { email, handleEmail, isValidEmail };
 };
 
 export default useEmail;

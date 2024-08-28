@@ -3,7 +3,7 @@ import { background1, text1 } from '@/styles/vars.css';
 
 export const container = style({
   width: '30rem',
-  height: '34rem',
+  height: '36rem',
   background: background1,
   color: text1,
   borderRadius: '1rem',
@@ -32,7 +32,19 @@ export const radioWrapper = style({
 
 export const inputWrapper = style({
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'center',
+  position: 'relative',
+  height: '5rem',
+});
+
+export const errorText = style({
+  color: 'red',
+  textAlign: 'center',
+  marginTop: '1rem',
+  position: 'absolute',
+  bottom: '-1rem',
+  left: '30%',
 });
 
 export const buttonWrapper = style({
@@ -43,4 +55,9 @@ export const buttonWrapper = style({
 
 export const subscriptionButton = style({
   fontSize: '1.2rem !important',
+});
+
+export const successText = style({
+  fontSize: '1.4rem',
+  textAlign: 'center',
 });

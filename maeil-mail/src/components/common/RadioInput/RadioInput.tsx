@@ -23,7 +23,7 @@ export default function RadioInput({ category, text, ...props }: RadioInputProps
       />
       <label htmlFor={`${category}`} className={customRadio}>
         <CheckIcon className={`${checkIcon} ${myStyle}`} />
-        <span className={selectText}>{text}</span>
+        <span className={`${selectText} ${myStyle}`}>{text}</span>
       </label>
     </div>
   );
