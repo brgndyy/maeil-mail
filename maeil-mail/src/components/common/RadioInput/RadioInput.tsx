@@ -1,5 +1,5 @@
 import { radioContainer, customRadio, hiddenRadio, checkIcon, selectText } from './radioInput.css';
-import CheckIcon from '@/assets/images/Check.svg?react';
+import CheckIcon from '@/assets/images/check.svg?react';
 import { myStyle } from '@/styles/vars.css';
 import Input from '../Input/Input';
 import { InputHTMLAttributes } from 'react';
