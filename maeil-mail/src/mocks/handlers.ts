@@ -8,4 +8,9 @@ export const handlers = [
       status: 200,
     });
   }),
+  http.post(`${BASE_URL}${API_ROUTES.post_new_question}`, () => {
+    return HttpResponse.json(null, {
+      status: 200,
+    });
+  }),
 ];

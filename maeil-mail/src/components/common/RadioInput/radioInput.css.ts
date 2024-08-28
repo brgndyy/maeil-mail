@@ -57,4 +57,5 @@ export const checkIcon = style({
 export const selectText = style({
   margin: '0 1rem',
   fontSize: '1.8rem',
+  color: text1,
 });

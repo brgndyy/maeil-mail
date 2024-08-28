@@ -7,8 +7,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   danger?: boolean;
 }
 
-export default function Input({ variant, danger = false, ...props }: InputProps) {
-  const classNames = ` ${inputStyle[variant]} ${myStyle}  ${baseInputStyle} ${danger && dangerStyle}`;
+export default function Input({ variant, danger = false, className, ...props }: InputProps) {
+  const classNames = ` ${inputStyle[variant]} ${myStyle}  ${baseInputStyle} ${className ? className : ''} ${danger && dangerStyle}`;
 
   return <input className={classNames} {...props} />;
 }

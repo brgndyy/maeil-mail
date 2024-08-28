@@ -48,3 +48,11 @@ globalStyle(`:root`, {
 globalStyle(`[data-theme='dark']`, {
   background: darkTheme.colorBackground,
 });
+
+globalStyle('.cm-line', {
+  fontSize: '2.1rem !important',
+});
+
+globalStyle('.ͼ1.cm-focused', {
+  outline: 'none !important',
+});
