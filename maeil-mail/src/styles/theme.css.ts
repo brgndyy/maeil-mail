@@ -1,9 +1,9 @@
 import { createGlobalTheme } from '@vanilla-extract/css';
 
 export const lightTheme = createGlobalTheme(':root', {
-  colorBackground: '#0a0a0a',
+  colorBackground: '#1a1a1a',
 });
 
 export const darkTheme = createGlobalTheme('[data-theme="dark"]', {
-  colorBackground: '#0a0a0a',
+  colorBackground: '#1a1a1a',
 });

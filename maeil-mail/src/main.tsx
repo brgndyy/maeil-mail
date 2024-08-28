@@ -30,7 +30,9 @@ export const router = createBrowserRouter(
       element: (
         <Suspense fallback={<div>로딩중!</div>}>
           <MainWrapper>
-            <QuestionDetailPage />
+            <HelmetProvider>
+              <QuestionDetailPage />
+            </HelmetProvider>
           </MainWrapper>
         </Suspense>
       ),
