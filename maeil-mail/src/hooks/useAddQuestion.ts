@@ -2,7 +2,6 @@ import { type ChangeEvent, useState, FormEvent } from 'react';
 import useCategory from './useCategory';
 import { useMutation } from '@tanstack/react-query';
 import { postNewQuestion } from '@/apis/api';
-import { useNavigate } from 'react-router-dom';
 import { Category } from '@/types';
 import toast from '@/utils/toast';
 

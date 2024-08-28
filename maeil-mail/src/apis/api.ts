@@ -42,3 +42,16 @@ export const postNewQuestion = async ({ title, category, content }: PostNewQuest
     throw new Error('에러~');
   }
 };
+
+export const getDetailQuestion = async ({ id }: { id: string }) => {
+  const response = await fetch(`${BASE_URL}${API_ROUTES.question}/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const data = await response.json();
+
+  return data;
+};
