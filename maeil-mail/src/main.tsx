@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import QuestionDetailPage from './pages/QuestionDetailPage/QuestionDetailPage';
 import NotFound from './pages/NotFound/NotFound';
 import MainWrapper from './components/common/Wrapper/MainWrapper';
+import { HelmetProvider } from 'react-helmet-async';
 
 const client = new QueryClient();
 
@@ -17,9 +18,11 @@ export const router = createBrowserRouter(
     {
       path: PAGE_ROUTES.main,
       element: (
-        <MainWrapper>
-          <App />
-        </MainWrapper>
+        <HelmetProvider>
+          <MainWrapper>
+            <App />
+          </MainWrapper>
+        </HelmetProvider>
       ),
     },
     {
