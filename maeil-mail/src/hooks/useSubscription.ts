@@ -16,7 +16,7 @@ const useSubscription = () => {
     onSuccess: () => {
       toast.success('이메일 등록이 완료 되었어요!');
     },
-    onError: (error: Error) => {
+    onError: () => {
       toast.error('이메일 등록에 실패했어요!');
       console.error('이메일 등록에 실패했어요!');
     },
