@@ -1,5 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import useEmail from './useEmail';
+import validateEmail from '@/utils/validateEmail';
 import useCategory from './useCategory';
 import { postSubscribe } from '@/apis/api';
 import toast from '@/utils/toast';
@@ -24,12 +25,12 @@ const useSubscription = () => {
   const handleSubmitSubscription = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isValidCategory) {
-      toast.error('카테고리를 올바르게 선택해주세요'); // 카테고리가 유효하지 않을 때 에러 메시지 표시
+      toast.error('카테고리를 올바르게 선택해주세요');
       return;
     }
 
-    if (!isValidEmail) {
-      toast.error('유효한 이메일을 입력해주세요.'); // 이메일이 유효하지 않을 때 에러 메시지 표시
+    if (!isValidEmail || !validateEmail(email)) {
+      toast.error('유효한 이메일을 입력해주세요.');
       return;
     }
 
