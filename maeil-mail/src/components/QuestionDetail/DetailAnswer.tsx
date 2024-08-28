@@ -1,5 +1,6 @@
 import formatMarkdownContent from '@/utils/codemirror/formatMarkDownContent';
 import MarkdownPreview from '@uiw/react-markdown-preview';
+import { contentText } from './questionDetail.css';
 
 interface DetailAnswerProps {
   content: string;
@@ -7,5 +8,5 @@ interface DetailAnswerProps {
 
 export default function DetailAnswer({ content }: DetailAnswerProps) {
   const formattedContent = formatMarkdownContent(content);
-  return <MarkdownPreview source={formattedContent} />;
+  return <MarkdownPreview source={formattedContent} className={contentText} />;
 }

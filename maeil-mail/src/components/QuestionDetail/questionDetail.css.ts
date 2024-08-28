@@ -14,3 +14,7 @@ export const categoryText = style({
   color: text2,
   textAlign: 'center',
 });
+
+export const contentText = style({
+  fontFamily: 'BMHANNAAir',
+});

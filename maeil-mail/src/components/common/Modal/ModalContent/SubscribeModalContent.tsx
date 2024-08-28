@@ -43,7 +43,7 @@ export default function SubscribeModalContent() {
       <div className={buttonWrapper}>
         {isSuccess ? (
           <span className={successText}>
-            구독에 성공했어요! <br /> 내일부터 질문을 보내드릴게요!
+            신청이 완료 됐어요! <br /> 매일 오전 7시에 면접 질문을 보내드릴게요!
           </span>
         ) : (
           <Button variant="border" className={subscriptionButton} type="submit">
