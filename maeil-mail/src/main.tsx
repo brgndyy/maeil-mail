@@ -9,7 +9,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import QuestionDetailPage from './pages/QuestionDetailPage/QuestionDetailPage';
 import NotFound from './pages/NotFound/NotFound';
 import MainWrapper from './components/common/Wrapper/MainWrapper';
-import ContentWrapper from './components/common/Wrapper/ContentWrapper';
 
 const client = new QueryClient();
 
