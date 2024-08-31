@@ -10,6 +10,12 @@ export const container = style({
   padding: '2rem',
 });
 
+export const successLayout = style({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
+
 export const title = style({
   fontSize: '2rem',
   fontWeight: 'bold',
@@ -58,6 +64,6 @@ export const subscriptionButton = style({
 });
 
 export const successText = style({
-  fontSize: '1.4rem',
+  fontSize: '1.8rem',
   textAlign: 'center',
 });
