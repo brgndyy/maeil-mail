@@ -18,8 +18,15 @@ import Button from '../../Button/Button';
 import useAddQuestion from '@/hooks/useAddQuestion';
 
 export default function AddQuestionModalContent() {
-  const { handleAddNewQuestion, handleCategory, handleContent, handleTitle, title, content } =
-    useAddQuestion();
+  const {
+    handleAddNewQuestion,
+    handleCategory,
+    handleContent,
+    handleTitle,
+    title,
+    content,
+    isPending,
+  } = useAddQuestion();
 
   return (
     <form className={`${container} ${myStyle}`} onSubmit={handleAddNewQuestion}>
@@ -61,7 +68,7 @@ export default function AddQuestionModalContent() {
         ]}
       />
       <div className={buttonWrapper}>
-        <Button variant="border" className={addQuestionButton} type="submit">
+        <Button variant="border" className={addQuestionButton} isPending={isPending} type="submit">
           질문 등록하기
         </Button>
       </div>

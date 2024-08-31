@@ -10,7 +10,7 @@ const useAddQuestion = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
-  const { mutate: addNewQuestionMutation } = useMutation({
+  const { mutate: addNewQuestionMutation, isPending } = useMutation({
     mutationFn: postNewQuestion,
     onSuccess: () => {
       toast.success('새로운 질문 둥록에 성공했어요!');
@@ -38,7 +38,15 @@ const useAddQuestion = () => {
     addNewQuestionMutation({ title, category: category as Category, content });
   };
 
-  return { handleAddNewQuestion, handleCategory, handleContent, handleTitle, title, content };
+  return {
+    handleAddNewQuestion,
+    handleCategory,
+    handleContent,
+    handleTitle,
+    title,
+    content,
+    isPending,
+  };
 };
 
 export default useAddQuestion;

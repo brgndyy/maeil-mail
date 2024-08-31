@@ -14,10 +14,18 @@ import RadioInput from '../../RadioInput/RadioInput';
 import Input from '../../Input/Input';
 import Button from '../../Button/Button';
 import useSubscription from '@/hooks/useSubscription';
+import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
 
 export default function SubscribeModalContent() {
-  const { email, handleCategory, handleEmail, isValidEmail, handleSubmitSubscription, isSuccess } =
-    useSubscription();
+  const {
+    email,
+    handleCategory,
+    handleEmail,
+    isValidEmail,
+    handleSubmitSubscription,
+    isSuccess,
+    isPending = true,
+  } = useSubscription();
 
   return (
     <form className={`${container} ${myStyle}`} onSubmit={handleSubmitSubscription}>
@@ -45,6 +53,8 @@ export default function SubscribeModalContent() {
           <span className={successText}>
             신청이 완료 됐어요! <br /> 매일 오전 7시에 면접 질문을 보내드릴게요!
           </span>
+        ) : isPending ? (
+          <LoadingSpinner />
         ) : (
           <Button variant="border" className={subscriptionButton} type="submit">
             매일 메일 신청하기

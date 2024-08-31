@@ -11,7 +11,11 @@ const useSubscription = () => {
 
   const { email, handleEmail, isValidEmail } = useEmail();
 
-  const { mutate: subscriptionMutation, isSuccess } = useMutation({
+  const {
+    mutate: subscriptionMutation,
+    isSuccess,
+    isPending,
+  } = useMutation({
     mutationFn: postSubscribe,
     onSuccess: () => {
       toast.success('이메일 등록이 완료 되었어요!');
@@ -45,6 +49,7 @@ const useSubscription = () => {
     isValidEmail,
     handleSubmitSubscription,
     isSuccess,
+    isPending,
   };
 };
 
