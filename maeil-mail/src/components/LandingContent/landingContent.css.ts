@@ -21,6 +21,7 @@ export const logoContainer = style({
   justifyContent: 'center',
   alignItems: 'center',
   margin: '1.3rem 0',
+  minHeight: '4rem',
 });
 
 export const logo = style({

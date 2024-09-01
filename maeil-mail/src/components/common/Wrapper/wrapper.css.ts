@@ -20,5 +20,5 @@ export const contentWrapper = style({
   paddingBottom: '4rem',
   display: 'flex',
   justifyContent: 'center',
-  overflowX: 'hidden',
+  overflow: 'hidden',
 });
