@@ -68,7 +68,7 @@ globalStyle('.ͼ1.cm-focused', {
 // markdown-preview
 
 globalStyle('.wmde-markdown', {
-  background: `${background1} !important`,
+  background: `${darkTheme.colorBackground} !important`,
   color: `${text1} !important`,
   fontSize: '1.3rem !importannt',
   fontFamily: 'BMHANNAAir !important',
@@ -83,7 +83,7 @@ globalStyle('.wmde-markdown code', {
 });
 
 globalStyle('.wmde-markdown pre', {
-  background: `${background1} !important`,
+  background: `${darkTheme.colorBackground} !important`,
 });
 
 globalStyle('.wmde-markdown hr', {
