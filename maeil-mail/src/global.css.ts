@@ -1,7 +1,6 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { globalStyle, globalFontFace } from '@vanilla-extract/css';
 import { lightTheme, darkTheme } from './styles/theme.css';
-import { text1, background1 } from './styles/vars.css';
-import { globalFontFace } from '@vanilla-extract/css';
+import { text1 } from './styles/vars.css';
 
 globalFontFace('BMHANNAAir', {
   src: 'url(https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff) format("woff")',
@@ -68,7 +67,7 @@ globalStyle('.ͼ1.cm-focused', {
 // markdown-preview
 
 globalStyle('.wmde-markdown', {
-  background: `${background1} !important`,
+  background: `${darkTheme.colorBackground} !important`,
   color: `${text1} !important`,
   fontSize: '1.3rem !importannt',
   fontFamily: 'BMHANNAAir !important',
@@ -83,7 +82,7 @@ globalStyle('.wmde-markdown code', {
 });
 
 globalStyle('.wmde-markdown pre', {
-  background: `${background1} !important`,
+  background: `${darkTheme.colorBackground} !important`,
 });
 
 globalStyle('.wmde-markdown hr', {

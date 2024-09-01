@@ -10,8 +10,15 @@ import QuestionDetailPage from './pages/QuestionDetailPage/QuestionDetailPage';
 import NotFound from './pages/NotFound/NotFound';
 import MainWrapper from './components/common/Wrapper/MainWrapper';
 import { HelmetProvider } from 'react-helmet-async';
+import QueryErrorBoundary from './components/error/QueryErrorBoundary';
 
-const client = new QueryClient();
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      throwOnError: true,
+    },
+  },
+});
 
 export const router = createBrowserRouter(
   [
@@ -60,8 +67,10 @@ export const router = createBrowserRouter(
 //   createRoot(document.getElementById('root')!).render(
 //     <StrictMode>
 //       <QueryClientProvider client={client}>
-//         <RouterProvider router={router} />
-//         <ToastContainer />
+//         <QueryErrorBoundary>
+//           <RouterProvider router={router} />
+//           <ToastContainer />
+//         </QueryErrorBoundary>
 //       </QueryClientProvider>
 //     </StrictMode>,
 //   );
@@ -70,8 +79,10 @@ export const router = createBrowserRouter(
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={client}>
-      <RouterProvider router={router} />
-      <ToastContainer />
+      <QueryErrorBoundary>
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </QueryErrorBoundary>
     </QueryClientProvider>
   </StrictMode>,
 );
