@@ -12,7 +12,7 @@ function App() {
   return (
     <ContentWrapper>
       <MetaTag
-        title="매일 메일의 메인페이지입니다."
+        title="매일 메일로 면접 질문을 보내드려요!"
         description="매일 메일을 구독할수 있어요!"
         url="/"
       />
