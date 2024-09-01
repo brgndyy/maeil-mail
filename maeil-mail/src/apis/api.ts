@@ -51,6 +51,10 @@ export const getDetailQuestion = async ({ id }: { id: string }) => {
     },
   });
 
+  if (!response.ok) {
+    throw new Error('에러 발생!');
+  }
+
   const data = await response.json();
 
   return data;
