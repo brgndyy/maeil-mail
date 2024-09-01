@@ -1,7 +1,6 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { globalStyle, globalFontFace } from '@vanilla-extract/css';
 import { lightTheme, darkTheme } from './styles/theme.css';
-import { text1, background1 } from './styles/vars.css';
-import { globalFontFace } from '@vanilla-extract/css';
+import { text1 } from './styles/vars.css';
 
 globalFontFace('BMHANNAAir', {
   src: 'url(https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff) format("woff")',
