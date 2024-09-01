@@ -6,7 +6,7 @@ interface ToastOptions {
   duration?: number;
 }
 
-const showToast = ({ message, type, duration = 1500 }: ToastOptions) => {
+const showToast = ({ message, type, duration = 2500 }: ToastOptions) => {
   eventEmitter.publish('toast', { message, type, duration });
 };
 
