@@ -1,6 +1,6 @@
 import { globalStyle, globalFontFace } from '@vanilla-extract/css';
 import { lightTheme, darkTheme } from './styles/theme.css';
-import { text1 } from './styles/vars.css';
+import { text1, borderColor1 } from './styles/vars.css';
 
 globalFontFace('BMHANNAAir', {
   src: 'url(https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff) format("woff")',
@@ -86,7 +86,7 @@ globalStyle('.wmde-markdown pre', {
 });
 
 globalStyle('.wmde-markdown hr', {
-  background: '#82071e !important',
+  background: `${borderColor1} !important`,
   height: '1px !important',
 });
 
