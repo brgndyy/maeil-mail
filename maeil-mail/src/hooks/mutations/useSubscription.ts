@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
-import useEmail from './useEmail';
+import useEmail from '../useEmail';
 import validateEmail from '@/utils/validateEmail';
-import useCategory from './useCategory';
+import useCategory from '../useCategory';
 import { postSubscribe } from '@/apis/api';
 import toast from '@/utils/toast';
 import { Category } from '@/types';
