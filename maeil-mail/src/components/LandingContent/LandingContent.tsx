@@ -2,21 +2,32 @@ import {
   container,
   logoWrapper,
   logoContainer,
+  buttonContainer,
   logo,
   first,
   second,
   third,
   fourth,
-  buttonContainer,
+  fifth,
+  sixth,
+  subLogo,
 } from './landingContent.css';
 import { myStyle } from '@/styles/vars.css';
 import Button from '../common/Button/Button';
+import { useNavigate } from 'react-router-dom';
+import PAGE_ROUTES from '@/constants/pageRoutes';
 
 interface LandingContentProps {
   handleModalOpen: () => void;
 }
 
 export default function LandingContent({ handleModalOpen }: LandingContentProps) {
+  const navigate = useNavigate();
+
+  const handleNavigateToQuestions = () => {
+    navigate(PAGE_ROUTES.all_questions);
+  };
+
   return (
     <div className={`${container} `}>
       <div className={logoWrapper}>
@@ -35,6 +46,15 @@ export default function LandingContent({ handleModalOpen }: LandingContentProps)
       <div className={buttonContainer}>
         <Button variant="border" className={fourth} onClick={handleModalOpen}>
           구독신청하기
+        </Button>
+      </div>
+
+      <div className={logoContainer}>
+        <h1 className={`${subLogo} ${myStyle} ${fifth}`}>이미 구독 중이신가요?</h1>
+      </div>
+      <div className={buttonContainer}>
+        <Button variant="primary" className={sixth} onClick={handleNavigateToQuestions}>
+          질문 둘러보기
         </Button>
       </div>
     </div>

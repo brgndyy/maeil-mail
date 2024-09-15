@@ -1,9 +1,10 @@
 import { styleVariants, style } from '@vanilla-extract/css';
-import { text1, borderColor1 } from '@/styles/vars.css';
+import { text1, text3, borderColor1, background2 } from '@/styles/vars.css';
 
 export const buttonStyle = styleVariants({
   default: { background: 'none', color: text1 },
   border: { background: 'none', border: `0.1rem solid ${borderColor1}`, color: text1 },
+  primary: { background: background2, border: `0.1rem solid ${borderColor1}`, color: text3 },
 });
 
 export const baseButtonStyle = style({
