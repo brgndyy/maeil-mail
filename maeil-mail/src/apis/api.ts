@@ -1,4 +1,4 @@
-import { Category } from '@/types';
+import { Category, CategoryWithAll } from '@/types';
 import BASE_URL from './baseUrl';
 import API_ROUTES from './routes';
 
@@ -61,7 +61,7 @@ export const getDetailQuestion = async ({ id }: { id: string }) => {
 };
 
 interface GetQuestionByCategoryOptions {
-  category: Category;
+  category: CategoryWithAll;
 }
 
 export const getQuestionByCategory = async ({ category }: GetQuestionByCategoryOptions) => {
