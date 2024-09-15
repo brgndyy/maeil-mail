@@ -6,4 +6,8 @@ export const dividerStyle = styleVariants({
     border: `0.01rem solid ${borderColor1}`,
     margin: '2rem 0',
   },
+  none: {
+    border: `none`,
+    margin: '1rem 0',
+  },
 });
