@@ -59,3 +59,24 @@ export const getDetailQuestion = async ({ id }: { id: string }) => {
 
   return data;
 };
+
+interface GetQuestionByCategoryOptions {
+  category: Category;
+}
+
+export const getQuestionByCategory = async ({ category }: GetQuestionByCategoryOptions) => {
+  const response = await fetch(`${BASE_URL}${API_ROUTES.question}?category=${category}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('에러 발생!');
+  }
+
+  const data = await response.json();
+
+  return data;
+};

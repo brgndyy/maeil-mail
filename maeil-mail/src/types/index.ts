@@ -1,1 +1,1 @@
-export type Category = 'frontend' | 'backend';
+export type Category = 'all' | 'frontend' | 'backend';
