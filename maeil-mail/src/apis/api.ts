@@ -1,8 +1,14 @@
-import { Category, CategoryWithAll } from '@/types';
+import { CategoryEN } from '@/types';
 import BASE_URL from './baseUrl';
 import API_ROUTES from './routes';
 
-export const postSubscribe = async ({ email, category }: { email: string; category: Category }) => {
+export const postSubscribe = async ({
+  email,
+  category,
+}: {
+  email: string;
+  category: CategoryEN;
+}) => {
   const response = await fetch(`${BASE_URL}${API_ROUTES.post_subscribe}`, {
     method: 'POST',
     body: JSON.stringify({
@@ -21,7 +27,7 @@ export const postSubscribe = async ({ email, category }: { email: string; catego
 
 interface PostNewQuestionOptions {
   title: string;
-  category: Category;
+  category: CategoryEN;
   content: string;
 }
 
@@ -61,7 +67,7 @@ export const getDetailQuestion = async ({ id }: { id: string }) => {
 };
 
 interface GetQuestionByCategoryOptions {
-  category: CategoryWithAll;
+  category: CategoryEN;
 }
 
 export const getQuestionByCategory = async ({ category }: GetQuestionByCategoryOptions) => {
