@@ -1,4 +1,4 @@
-import { useDropdownContext } from '@/contexts/DropdownContext';
+import useDropdown from '@/hooks/useDropdown';
 import type { PropsWithChildren } from 'react';
 
 interface MenuItemProps<T> extends PropsWithChildren {
@@ -7,7 +7,7 @@ interface MenuItemProps<T> extends PropsWithChildren {
 }
 
 export default function MenuItem<T>({ item, children, className = '' }: MenuItemProps<T>) {
-  const { setSelectedItem } = useDropdownContext();
+  const { setSelectedItem } = useDropdown();
 
   return (
     <button className={className} onClick={() => setSelectedItem(item)}>
