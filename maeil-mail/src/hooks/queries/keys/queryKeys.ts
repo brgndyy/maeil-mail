@@ -1,7 +1,7 @@
-import { CategoryWithAll } from '@/types';
+import { CategoryEN } from '@/types';
 
 export const questionKeys = {
   all: ['questions'],
   detail: (id: string) => [questionKeys.all, id],
-  category: (category: CategoryWithAll) => [questionKeys.all, category],
+  category: (category: CategoryEN) => [questionKeys.all, category],
 };
