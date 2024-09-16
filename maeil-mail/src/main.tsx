@@ -11,6 +11,7 @@ import NotFound from './pages/NotFound/NotFound';
 import MainWrapper from './components/common/Wrapper/MainWrapper';
 import { HelmetProvider } from 'react-helmet-async';
 import QueryErrorBoundary from './components/error/QueryErrorBoundary';
+import AllQuestionPage from './pages/AllQuestionPage/AllQuestionPage';
 
 const client = new QueryClient({
   defaultOptions: {
@@ -24,25 +25,15 @@ export const router = createBrowserRouter(
   [
     {
       path: PAGE_ROUTES.main,
-      element: (
-        <HelmetProvider>
-          <MainWrapper>
-            <App />
-          </MainWrapper>
-        </HelmetProvider>
-      ),
+      element: <App />,
     },
     {
       path: `${PAGE_ROUTES.question}/:id`,
-      element: (
-        <Suspense fallback={<div>로딩중!</div>}>
-          <MainWrapper>
-            <HelmetProvider>
-              <QuestionDetailPage />
-            </HelmetProvider>
-          </MainWrapper>
-        </Suspense>
-      ),
+      element: <QuestionDetailPage />,
+    },
+    {
+      path: PAGE_ROUTES.all_questions,
+      element: <AllQuestionPage />,
     },
     { path: '*', element: <NotFound /> },
   ],
@@ -68,8 +59,14 @@ export const router = createBrowserRouter(
 //     <StrictMode>
 //       <QueryClientProvider client={client}>
 //         <QueryErrorBoundary>
-//           <RouterProvider router={router} />
-//           <ToastContainer />
+//           <HelmetProvider>
+//             <Suspense fallback={<div>로딩중!</div>}>
+//               <MainWrapper>
+//                 <RouterProvider router={router} />
+//                 <ToastContainer />
+//               </MainWrapper>
+//             </Suspense>
+//           </HelmetProvider>
 //         </QueryErrorBoundary>
 //       </QueryClientProvider>
 //     </StrictMode>,
@@ -80,8 +77,14 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={client}>
       <QueryErrorBoundary>
-        <RouterProvider router={router} />
-        <ToastContainer />
+        <HelmetProvider>
+          <Suspense fallback={<div>로딩중!</div>}>
+            <MainWrapper>
+              <RouterProvider router={router} />
+              <ToastContainer />
+            </MainWrapper>
+          </Suspense>
+        </HelmetProvider>
       </QueryErrorBoundary>
     </QueryClientProvider>
   </StrictMode>,
