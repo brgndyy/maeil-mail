@@ -4,7 +4,8 @@ import validateEmail from '@/utils/validateEmail';
 import useCategory from '../useCategory';
 import { postSubscribe } from '@/apis/api';
 import toast from '@/utils/toast';
-import { Category } from '@/types';
+import { CategoryEN } from '@/types';
+import { PROGRESS_MESSAGE, ERROR_MESSAGE } from '@/constants/messages';
 
 const useSubscription = () => {
   const { category, isValidCategory, handleCategory } = useCategory();
@@ -18,27 +19,27 @@ const useSubscription = () => {
   } = useMutation({
     mutationFn: postSubscribe,
     onSuccess: () => {
-      toast.success('이메일 등록이 완료 되었어요!');
+      toast.success(PROGRESS_MESSAGE.success_subscription);
     },
     onError: () => {
-      toast.error('이메일 등록에 실패했어요!');
-      console.error('이메일 등록에 실패했어요!');
+      toast.error(ERROR_MESSAGE.fail_subscription);
+      console.error(ERROR_MESSAGE.fail_subscription);
     },
   });
 
   const handleSubmitSubscription = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isValidCategory) {
-      toast.error('카테고리를 올바르게 선택해주세요');
+      toast.error(ERROR_MESSAGE.invalid_category);
       return;
     }
 
     if (!isValidEmail || !validateEmail(email)) {
-      toast.error('유효한 이메일을 입력해주세요.');
+      toast.error(ERROR_MESSAGE.invalid_email);
       return;
     }
 
-    subscriptionMutation({ email, category: category as Category });
+    subscriptionMutation({ email, category: category as CategoryEN });
   };
 
   return {

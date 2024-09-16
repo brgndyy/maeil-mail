@@ -2,8 +2,9 @@ import { type ChangeEvent, useState, FormEvent } from 'react';
 import useCategory from '../useCategory';
 import { useMutation } from '@tanstack/react-query';
 import { postNewQuestion } from '@/apis/api';
-import { Category } from '@/types';
+import { CategoryEN } from '@/types';
 import toast from '@/utils/toast';
+import { PROGRESS_MESSAGE, ERROR_MESSAGE } from '@/constants/messages';
 
 const useAddQuestion = () => {
   const { category, isValidCategory, handleCategory } = useCategory();
@@ -13,10 +14,10 @@ const useAddQuestion = () => {
   const { mutate: addNewQuestionMutation, isPending } = useMutation({
     mutationFn: postNewQuestion,
     onSuccess: () => {
-      toast.success('새로운 질문 둥록에 성공했어요!');
+      toast.success(PROGRESS_MESSAGE.success_add_question);
     },
     onError: () => {
-      toast.error('새로운 질문 둥록에 실패했어요!');
+      toast.error(ERROR_MESSAGE.fail_add_question);
     },
   });
 
@@ -35,7 +36,7 @@ const useAddQuestion = () => {
       return;
     }
 
-    addNewQuestionMutation({ title, category: category as Category, content });
+    addNewQuestionMutation({ title, category: category as CategoryEN, content });
   };
 
   return {
