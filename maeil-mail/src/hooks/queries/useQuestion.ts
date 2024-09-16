@@ -1,10 +1,10 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
-import type { CategoryWithAll } from '@/types';
+import type { CategoryEN } from '@/types';
 import { getQuestionByCategory } from '@/apis/api';
 import { questionKeys } from './keys/queryKeys';
 
 interface UseQuestionOptions {
-  category: CategoryWithAll;
+  category: CategoryEN;
 }
 
 const useQuestion = ({ category }: UseQuestionOptions) => {

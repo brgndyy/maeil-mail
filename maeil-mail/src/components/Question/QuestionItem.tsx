@@ -1,4 +1,4 @@
-import type { Category } from '@/types';
+import type { CategoryEN } from '@/types';
 import { questionItemContainer } from './question.css';
 import { myStyle } from '@/styles/vars.css';
 import PAGE_ROUTES from '@/constants/pageRoutes';
@@ -10,10 +10,10 @@ import SubTxt from '../common/SubTxt/SubTxt';
 interface QuestionItemProps {
   id: number;
   title: string;
-  category: Category;
+  category: CategoryEN;
 }
 
-const formatCategory = (category: Category) => {
+const formatCategory = (category: CategoryEN) => {
   return category === 'backend' ? '백엔드' : category === 'frontend' ? '프론트엔드' : '전체';
 };
 
