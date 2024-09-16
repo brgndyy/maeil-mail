@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { Category } from '@/types';
+import { CategoryEN } from '@/types';
 
-const isCategory = (value: any): value is Category => {
+const isCategory = (value: any): value is CategoryEN => {
   return value === 'frontend' || value === 'backend';
 };
 
 const useCategory = () => {
-  const [category, setCategory] = useState<Category | ''>('');
+  const [category, setCategory] = useState<CategoryEN | ''>('');
   const isValidCategory = category !== '';
 
   const handleCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
