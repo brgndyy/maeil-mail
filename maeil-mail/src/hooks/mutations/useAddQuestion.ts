@@ -1,5 +1,5 @@
 import { type ChangeEvent, useState, FormEvent } from 'react';
-import useCategory from './useCategory';
+import useCategory from '../useCategory';
 import { useMutation } from '@tanstack/react-query';
 import { postNewQuestion } from '@/apis/api';
 import { Category } from '@/types';

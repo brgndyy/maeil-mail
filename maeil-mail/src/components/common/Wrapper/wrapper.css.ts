@@ -13,12 +13,15 @@ export const mainWrapper = style({
 
 export const contentWrapper = style({
   width: '70%',
-  margin: '0 auto',
+  margin: '2rem auto',
   height: 'auto',
-  minHeight: '100vh',
-  //   paddingTop: '8rem',
   paddingBottom: '4rem',
   display: 'flex',
   justifyContent: 'center',
   overflow: 'hidden',
+  flexDirection: 'column',
+});
+
+export const minVH = style({
+  minHeight: '100vh',
 });

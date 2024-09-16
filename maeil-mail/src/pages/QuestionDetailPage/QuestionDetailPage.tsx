@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import useDetailQuestion from '@/hooks/useDetailQuestion';
+import useDetailQuestion from '@/hooks/queries/useDetailQuestion';
 import DetailTitle from '@/components/QuestionDetail/DetailTitle';
 import { pageLayout } from './page.css';
 import { myStyle } from '@/styles/vars.css';

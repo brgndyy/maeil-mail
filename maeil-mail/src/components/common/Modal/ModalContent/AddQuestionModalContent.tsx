@@ -15,7 +15,7 @@ import {
 import RadioInput from '../../RadioInput/RadioInput';
 import Input from '../../Input/Input';
 import Button from '../../Button/Button';
-import useAddQuestion from '@/hooks/useAddQuestion';
+import useAddQuestion from '@/hooks/mutations/useAddQuestion';
 
 export default function AddQuestionModalContent() {
   const {

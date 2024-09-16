@@ -14,7 +14,7 @@ import {
 import RadioInput from '../../RadioInput/RadioInput';
 import Input from '../../Input/Input';
 import Button from '../../Button/Button';
-import useSubscription from '@/hooks/useSubscription';
+import useSubscription from '@/hooks/mutations/useSubscription';
 import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
 
 export default function SubscribeModalContent() {

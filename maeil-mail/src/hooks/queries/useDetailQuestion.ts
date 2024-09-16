@@ -1,9 +1,10 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { getDetailQuestion } from '@/apis/api';
+import { questionKeys } from './keys/queryKeys';
 
 const useDetailQuestion = (id: string) => {
   return useSuspenseQuery({
-    queryKey: ['questions'],
+    queryKey: questionKeys.detail(id),
     queryFn: () => getDetailQuestion({ id }),
   });
 };

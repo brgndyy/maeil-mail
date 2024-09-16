@@ -44,6 +44,10 @@ globalStyle('a, a:link, a:visited, a:hover', {
   textDecoration: 'none',
 });
 
+globalStyle('ul', {
+  padding: '0',
+});
+
 globalStyle('li', {
   listStyle: 'none',
 });
@@ -99,4 +103,8 @@ globalStyle('.wmde-markdown blockquote', {
 
 globalStyle('.wmde-markdown img', {
   background: 'none !important',
+});
+
+globalStyle('.wmde-markdown p', {
+  fontSize: '2rem',
 });
