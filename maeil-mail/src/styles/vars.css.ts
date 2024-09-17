@@ -7,6 +7,7 @@ export const text1 = createVar();
 export const text2 = createVar();
 export const text3 = createVar();
 export const subText1 = createVar();
+export const subText2 = createVar();
 export const borderColor1 = createVar();
 
 export const myStyle = style({
@@ -18,6 +19,7 @@ export const myStyle = style({
     [text2]: '#868e96',
     [text3]: '#000',
     [subText1]: '#cacaca',
+    [subText2]: '#878787',
     [borderColor1]: '#505050',
   },
   selectors: {
@@ -30,6 +32,7 @@ export const myStyle = style({
         [text2]: '#868e96',
         [text3]: '#000',
         [subText1]: '#cacaca',
+        [subText2]: '#878787',
         [borderColor1]: '#505050',
       },
     },
