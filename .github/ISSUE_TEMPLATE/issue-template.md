@@ -1,6 +1,6 @@
 ---
 name: 이슈 템플릿
-about: "\b이슈 템플릿을 생성합니다."
+about: "이슈 템플릿을 생성합니다."
 title: ""
 labels: ""
 assignees: brgndyy
