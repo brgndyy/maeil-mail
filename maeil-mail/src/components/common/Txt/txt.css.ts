@@ -13,3 +13,7 @@ export const baseTxtStyle = style({
   fontFamily: 'BMHANNAAir',
   color: text1,
 });
+
+export const centerAlign = style({
+  textAlign: 'center',
+});

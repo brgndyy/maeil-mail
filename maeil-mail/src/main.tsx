@@ -12,6 +12,7 @@ import MainWrapper from './components/common/Wrapper/MainWrapper';
 import { HelmetProvider } from 'react-helmet-async';
 import QueryErrorBoundary from './components/error/QueryErrorBoundary';
 import AllQuestionPage from './pages/AllQuestionPage/AllQuestionPage';
+import PolicyPage from './pages/Policy/PolicyPage';
 
 const client = new QueryClient({
   defaultOptions: {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter(
     {
       path: PAGE_ROUTES.all_questions,
       element: <AllQuestionPage />,
+    },
+    {
+      path: PAGE_ROUTES.policy,
+      element: <PolicyPage />,
     },
     { path: '*', element: <NotFound /> },
   ],
