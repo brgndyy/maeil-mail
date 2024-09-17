@@ -17,6 +17,8 @@ export const dropDownContainer = style({
 export const selected = style({
   width: '100%',
   display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
   padding: '1rem',
   borderRadius: '1rem',
   border: `0.1rem solid`,

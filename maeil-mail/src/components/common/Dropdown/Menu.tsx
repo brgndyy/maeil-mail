@@ -1,4 +1,4 @@
-import { useDropdownContext } from '@/contexts/DropdownContext';
+import useDropdown from '@/hooks/useDropdown';
 import type { PropsWithChildren } from 'react';
 
 interface MenuProps extends PropsWithChildren {
@@ -6,7 +6,7 @@ interface MenuProps extends PropsWithChildren {
 }
 
 export default function Menu({ children, className = '' }: MenuProps) {
-  const { isOpen } = useDropdownContext();
+  const { isOpen } = useDropdown();
 
   if (!isOpen) return null;
 

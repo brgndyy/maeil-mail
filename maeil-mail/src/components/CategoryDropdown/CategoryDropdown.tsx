@@ -14,7 +14,7 @@ export default function CategoryDropdown({ onItemSelect, category }: CategoryDro
     <Dropdown onItemSelect={onItemSelect} className={`${myStyle} ${dropDownContainer}`}>
       <Dropdown.Toggle className={selected}>{REVERSE_CATEGORY[category]}</Dropdown.Toggle>
       <Dropdown.Menu className={`${myStyle} ${menuWrapper}`}>
-        {(Object.keys(CATEGORY) as CategoryKO[]).map((categoryKO) => (
+        {Object.keys(CATEGORY).map((categoryKO) => (
           <Dropdown.MenuItem key={categoryKO} item={categoryKO} className={selectButton}>
             {categoryKO}
           </Dropdown.MenuItem>
