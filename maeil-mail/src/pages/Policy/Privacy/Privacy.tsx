@@ -119,7 +119,11 @@ export default function Privacy() {
         <li key={index} className={wrapper} onClick={() => toggleSection(index)}>
           <div className={titleWrapper}>
             <Txt variant="medium">{section.title}</Txt>
-            {openSections[index] ? <UpArrow /> : <DownArrow />}
+            {openSections[index] ? (
+              <UpArrow width={10} height={10} />
+            ) : (
+              <DownArrow width={10} height={10} />
+            )}
           </div>
 
           {openSections[index] && <Txt variant="medium">{section.content}</Txt>}
