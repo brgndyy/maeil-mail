@@ -9,6 +9,7 @@ export const mainWrapper = style({
   height: 'auto',
   margin: '0 auto',
   animation: `${softAppear} 0.3s ease-in forwards`,
+  position: 'relative',
 });
 
 export const contentWrapper = style({
