@@ -5,15 +5,18 @@ import API_ROUTES from './routes';
 export const postSubscribe = async ({
   email,
   category,
+  code,
 }: {
   email: string;
   category: CategoryEN;
+  code: number;
 }) => {
   const response = await fetch(`${BASE_URL}${API_ROUTES.post_subscribe}`, {
     method: 'POST',
     body: JSON.stringify({
       email,
       category,
+      code,
     }),
     headers: {
       'Content-Type': 'application/json',

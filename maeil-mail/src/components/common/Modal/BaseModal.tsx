@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import Modal from './Modal';
-import { fadeInClass, fadeOutClass } from './modal.css';
+import { fadeInClass, fadeOutClass, container } from './modal.css';
 
 interface BaseModalProps extends PropsWithChildren {
   isModalOpen: boolean;
@@ -18,7 +18,7 @@ export default function BaseModal({ isModalOpen, handleModalClose, children }: B
     >
       <Modal.Portal id="portal">
         <Modal.Backdrop opacity="rgba(0, 0, 0, 0.5)">
-          <Modal.Container>{children}</Modal.Container>
+          <Modal.Container className={container}>{children}</Modal.Container>
         </Modal.Backdrop>
       </Modal.Portal>
     </Modal>

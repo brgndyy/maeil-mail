@@ -1,23 +1,21 @@
 import { radioContainer, customRadio, hiddenRadio, checkIcon, selectText } from './radioInput.css';
 import CheckIcon from '@/assets/images/check.svg?react';
 import { myStyle } from '@/styles/vars.css';
-import Input from '../Input/Input';
 import { InputHTMLAttributes } from 'react';
 
 interface RadioInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  category: string;
+  category?: string;
   text: string;
 }
 
-export default function RadioInput({ category, text, ...props }: RadioInputProps) {
+export default function RadioInput({ category = '', text, ...props }: RadioInputProps) {
   return (
     <div className={radioContainer}>
-      <Input
-        variant="default"
+      <input
         type="radio"
-        id={`${category}`}
+        id={category}
         name="field"
-        value={`${category}`}
+        value={category}
         className={hiddenRadio}
         {...props}
       />
