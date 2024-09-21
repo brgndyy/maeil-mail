@@ -13,7 +13,7 @@ export default function Toggle({ children, className = '' }: ToggleProps) {
   return (
     <button className={className} onClick={toggleDropdown}>
       {children}
-      {isOpen ? <UpArrow /> : <DownArrow />}
+      {isOpen ? <UpArrow width={10} height={10} /> : <DownArrow width={10} height={10} />}
     </button>
   );
 }
