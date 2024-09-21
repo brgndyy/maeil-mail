@@ -6,6 +6,7 @@ import QuestionList from '@/components/Question/QuestionList';
 import { CATEGORY } from '@/constants/category';
 import CategorySelect from '@/components/CategorySelect/CategorySelect';
 import MetaTag from '@/components/MetaTag/MetaTag';
+import ScrollToTop from '@/components/common/ScrollToTop/ScrollToTop';
 
 export default function AllQuestionPage() {
   const [category, setCategory] = useState<CategoryEN>('all');
@@ -24,6 +25,7 @@ export default function AllQuestionPage() {
       />
       <CategorySelect onClick={handleCategorySelect} category={category} />
       <QuestionList questionList={questionList} />
+      <ScrollToTop />
     </ContentWrapper>
   );
 }
