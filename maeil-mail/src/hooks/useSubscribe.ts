@@ -33,7 +33,11 @@ const useSubscribe = () => {
       return;
     }
 
-    subscriptionMutation({ email, category: category as CategoryEN });
+    subscriptionMutation({
+      email,
+      category: category as CategoryEN,
+      code: Number(verificationNumber),
+    });
   };
 
   return {
