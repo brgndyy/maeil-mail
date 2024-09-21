@@ -1,14 +1,41 @@
 import { InputHTMLAttributes } from 'react';
-import { baseInputStyle, inputStyle, dangerStyle } from './input.css';
+import {
+  baseInputStyle,
+  inputStyle,
+  dangerStyle,
+  container,
+  errorText,
+  sizeStyle,
+} from './input.css';
 import { myStyle } from '@/styles/vars.css';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   variant: keyof typeof inputStyle;
-  danger?: boolean;
+  size?: keyof typeof sizeStyle;
+  isError?: boolean;
+  errorMessage?: string;
 }
 
-export default function Input({ variant, danger = false, className, ...props }: InputProps) {
-  const classNames = ` ${inputStyle[variant]} ${myStyle}  ${baseInputStyle} ${className ? className : ''} ${danger && dangerStyle}`;
+export default function Input({
+  variant,
+  size = 'full',
+  isError = false,
+  errorMessage = '',
+  className,
+  ...props
+}: InputProps) {
+  const classNames = `
+    ${inputStyle[variant]} 
+    ${sizeStyle[size]} 
+    ${myStyle} 
+    ${baseInputStyle} 
+    ${className ? className : ''} 
+    ${isError && dangerStyle}`;
 
-  return <input className={classNames} {...props} />;
+  return (
+    <div className={container}>
+      <input className={classNames} {...props} />
+      {isError && <span className={errorText}>{errorMessage}</span>}
+    </div>
+  );
 }

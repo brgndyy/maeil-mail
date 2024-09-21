@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
-import { buttonStyle, baseButtonStyle } from './button.css';
+import { buttonStyle, baseButtonStyle, disabledButton } from './button.css';
 import type { PropsWithChildren } from 'react';
 import { myStyle } from '@/styles/vars.css';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
@@ -14,12 +14,15 @@ export default function Button({
   children,
   className,
   isPending = false,
+  disabled,
   ...props
 }: PropsWithChildren<ButtonProps>) {
-  const classNames = ` ${buttonStyle[variant]} ${myStyle} ${className ?? ''} ${baseButtonStyle}`;
+  const classNames = `${buttonStyle[variant]} ${myStyle} ${className ?? ''} ${baseButtonStyle} ${
+    disabled || isPending ? disabledButton : ''
+  }`;
 
   return (
-    <button {...props} className={classNames} disabled={isPending}>
+    <button {...props} className={classNames} disabled={disabled || isPending}>
       {isPending ? <LoadingSpinner /> : children}
     </button>
   );

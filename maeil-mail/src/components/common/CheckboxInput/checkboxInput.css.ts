@@ -1,14 +1,15 @@
 import { style } from '@vanilla-extract/css';
 import { background1, borderColor1, text1 } from '@/styles/vars.css';
 
-export const radioContainer = style({
+export const checkboxContainer = style({
   position: 'relative',
   display: 'flex',
   alignItems: 'center',
-  marginBottom: '2rem',
+  justifyContent: 'center',
+  margin: '2rem auto',
 });
 
-export const hiddenRadio = style({
+export const hiddenCheckbox = style({
   display: 'none',
   background: 'none',
   color: text1,
@@ -18,7 +19,7 @@ export const hiddenRadio = style({
   borderRadius: '1rem',
 });
 
-export const customRadio = style({
+export const customCheckbox = style({
   position: 'relative',
   paddingLeft: '2rem',
   cursor: 'pointer',
@@ -37,7 +38,7 @@ export const customRadio = style({
     background: background1,
   },
   selectors: {
-    [`${hiddenRadio}:checked + &::before`]: {
+    [`${hiddenCheckbox}:checked + &::before`]: {
       backgroundColor: background1,
       border: `0.01rem solid ${borderColor1}`,
     },
@@ -54,7 +55,7 @@ export const checkIcon = style({
   width: '2rem',
   height: '2rem',
   selectors: {
-    [`${hiddenRadio}:checked + ${customRadio} &`]: {
+    [`${hiddenCheckbox}:checked + ${customCheckbox} &`]: {
       display: 'block',
     },
   },

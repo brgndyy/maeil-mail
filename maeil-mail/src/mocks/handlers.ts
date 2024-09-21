@@ -14,6 +14,11 @@ export const handlers = [
       status: 200,
     });
   }),
+  http.post(`${BASE_URL}${API_ROUTES.verify_email}`, () => {
+    return HttpResponse.json(null, {
+      status: 200,
+    });
+  }),
   http.get(`${BASE_URL}${API_ROUTES.question}`, ({ request }) => {
     const url = new URL(request.url);
     const category = url.searchParams.get('category');

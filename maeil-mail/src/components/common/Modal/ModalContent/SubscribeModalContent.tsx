@@ -5,71 +5,115 @@ import {
   successLayout,
   categoryText,
   radioWrapper,
-  inputWrapper,
   buttonWrapper,
-  subscriptionButton,
-  successText,
-  errorText,
+  emailWrapper,
 } from './subscribeModalContent.css';
 import RadioInput from '../../RadioInput/RadioInput';
-import Input from '../../Input/Input';
 import Button from '../../Button/Button';
-import useSubscription from '@/hooks/mutations/useSubscription';
 import LoadingSpinner from '../../LoadingSpinner/LoadingSpinner';
+import Divider from '../../Divider/Divider';
+import VerifyEmailInput from './VerifyEmailInput';
+import Txt from '../../Txt/Txt';
+import CheckboxInput from '../../CheckboxInput/CheckboxInput';
+import Input from '../../Input/Input';
+import useSubscribe from '@/hooks/useSubscribe';
+import SuccessContent from './SuccessContent';
 
 export default function SubscribeModalContent() {
   const {
-    email,
+    isSubscriptionSuccess,
+    isSubscriptionPending,
     handleCategory,
+    handleVerificationNumber,
+    verificationNumber,
+    handleConsent,
     handleEmail,
-    isValidEmail,
+    handleVerifyEmail,
+    isSentEmail,
+    isAllValid,
     handleSubmitSubscription,
-    isSuccess,
-    isPending = true,
-  } = useSubscription();
+    email,
+    isValidEmail,
+    isAgreed,
+  } = useSubscribe();
 
   return (
-    <form
-      className={`${container} ${myStyle} ${isSuccess && successLayout}`}
-      onSubmit={handleSubmitSubscription}
-    >
-      {isSuccess ? (
-        <span className={successText}>
-          신청이 완료 됐어요! <br /> <br /> 매일 오전 7시에 <br />
-          면접 질문을 보내드릴게요!
-        </span>
+    <div className={`${container} ${myStyle} ${isSubscriptionSuccess && successLayout}`}>
+      {isSubscriptionSuccess ? (
+        <SuccessContent />
       ) : (
         <>
           <h2 className={title}>구독 정보 등록</h2>
+          <Divider variant="default" />
           <p className={categoryText}>분야</p>
           <div className={radioWrapper}>
             <RadioInput category="frontend" text="프론트엔드" onChange={handleCategory} />
             <RadioInput category="backend" text="백엔드" onChange={handleCategory} />
           </div>
 
-          <p className={categoryText}>이메일</p>
-          <div className={inputWrapper}>
-            <Input
-              variant="underLine"
-              danger={!isValidEmail}
-              placeholder="받으실 메일을 입력해주세요!"
-              onChange={handleEmail}
-              value={email}
-            />
-            {!isValidEmail && <span className={errorText}>유효하지 않은 이메일이에요!</span>}
+          <div className={emailWrapper}>
+            {isSentEmail ? (
+              <Txt center variant="large">
+                인증번호가 전송 되었어요! <br /> 하단에 인증번호를 입력해주세요.
+              </Txt>
+            ) : (
+              <VerifyEmailInput
+                email={email}
+                isSentEmail={isSentEmail}
+                isValidEmail={isValidEmail}
+                handleEmail={handleEmail}
+                handleVerifyEmail={handleVerifyEmail}
+              />
+            )}
           </div>
 
+          {isSentEmail && (
+            <>
+              <Input
+                onChange={handleVerificationNumber}
+                value={verificationNumber}
+                variant="underLine"
+                placeholder="인증번호 4자리를 입력해주세요."
+                maxLength={4}
+                type={'text'}
+                size="large"
+              />
+
+              <CheckboxInput
+                text={
+                  <>
+                    <a
+                      href="https://www.maeil-mail.kr/policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      개인정보취급방침
+                    </a>
+                    에 동의합니다.
+                  </>
+                }
+                isSelected={isAgreed}
+                onChange={handleConsent}
+              />
+            </>
+          )}
+
           <div className={buttonWrapper}>
-            {isPending ? (
+            {isSubscriptionPending ? (
               <LoadingSpinner />
             ) : (
-              <Button variant="border" className={subscriptionButton} type="submit">
+              <Button
+                variant="border"
+                disabled={!isAllValid}
+                type="submit"
+                onClick={handleSubmitSubscription}
+              >
                 매일 메일 신청하기
               </Button>
             )}
           </div>
         </>
       )}
-    </form>
+    </div>
   );
 }

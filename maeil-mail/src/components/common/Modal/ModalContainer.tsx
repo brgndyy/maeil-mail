@@ -2,10 +2,14 @@ import { ModalContext } from '@/contexts/ModalContext';
 import { useContext } from 'react';
 import type { PropsWithChildren } from 'react';
 
-export default function ModalContainer({ children }: PropsWithChildren) {
+interface ModalContainerProps extends PropsWithChildren {
+  className?: string;
+}
+
+export default function ModalContainer({ className = ' ', children }: ModalContainerProps) {
   const { mountAnimation, unMountAnimation, closing } = useContext(ModalContext);
 
-  const modalClassName = closing ? unMountAnimation : mountAnimation;
+  const modalClassName = `${closing ? unMountAnimation : mountAnimation} ${className}`;
 
   return <div className={modalClassName}>{children}</div>;
 }

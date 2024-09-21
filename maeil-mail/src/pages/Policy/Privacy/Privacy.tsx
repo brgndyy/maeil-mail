@@ -112,7 +112,7 @@ export default function Privacy() {
     <div className={`${myStyle} ${container}`}>
       <div className={mainWrapper}>
         <Txt variant="xLarge" center>
-          개인정보 처리방침
+          개인정보취급방침
         </Txt>
       </div>
       {section.map((section, index) => (

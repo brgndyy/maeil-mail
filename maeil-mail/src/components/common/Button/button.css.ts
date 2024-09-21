@@ -18,3 +18,11 @@ export const baseButtonStyle = style({
     opacity: '0.7',
   },
 });
+
+export const disabledButton = style({
+  opacity: 0.4,
+  cursor: 'not-allowed',
+  ':hover': {
+    opacity: 0.4,
+  },
+});

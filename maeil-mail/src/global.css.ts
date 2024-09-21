@@ -1,6 +1,6 @@
 import { globalStyle, globalFontFace } from '@vanilla-extract/css';
 import { lightTheme, darkTheme } from './styles/theme.css';
-import { text1, borderColor1 } from './styles/vars.css';
+import { text1, borderColor1, text2 } from './styles/vars.css';
 
 globalFontFace('BMHANNAAir', {
   src: 'url(https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff) format("woff")',
@@ -42,6 +42,7 @@ globalStyle('h1, h2, h3, p', {
 
 globalStyle('a, a:link, a:visited, a:hover', {
   textDecoration: 'none',
+  color: text2,
 });
 
 globalStyle('ul', {
