@@ -35,6 +35,7 @@ export default function SubscribeModalContent() {
     email,
     isValidEmail,
     isAgreed,
+    isVerifyingPending,
   } = useSubscribe();
 
   return (
@@ -59,7 +60,7 @@ export default function SubscribeModalContent() {
             ) : (
               <VerifyEmailInput
                 email={email}
-                isSentEmail={isSentEmail}
+                isVerifyingPending={isVerifyingPending}
                 isValidEmail={isValidEmail}
                 handleEmail={handleEmail}
                 handleVerifyEmail={handleVerifyEmail}
