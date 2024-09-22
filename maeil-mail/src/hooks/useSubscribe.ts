@@ -19,7 +19,10 @@ const useSubscribe = () => {
   const { verificationNumber, handleVerificationNumber, isValidVerificationNumber } =
     useVerificationNumber();
   const { isAgreed, handleConsent } = useConsent();
-  const { isSentEmail, handleVerifyEmail } = useVerifyMutation({ email, isValidCategory });
+  const { isSentEmail, handleVerifyEmail, isVerifyingPending } = useVerifyMutation({
+    email,
+    isValidCategory,
+  });
   const isAllValid = isValidCategory && isValidEmail && isValidVerificationNumber && isAgreed;
 
   const handleSubmitSubscription = () => {
@@ -55,6 +58,7 @@ const useSubscribe = () => {
     email,
     isValidEmail,
     isAgreed,
+    isVerifyingPending,
   };
 };
 

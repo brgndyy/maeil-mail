@@ -12,7 +12,7 @@ interface UseVerifyMutationOptions {
 const useVerifyMutation = ({ email, isValidCategory }: UseVerifyMutationOptions) => {
   const [isSentEmail, setIsSentEmail] = useState(false);
 
-  const { mutate: verifyEmailMutation } = useMutation({
+  const { mutate: verifyEmailMutation, isPending: isVerifyingPending } = useMutation({
     mutationFn: postVerifyEmail,
     onError: () => toast.error(ERROR_MESSAGE.fail_verify_email),
     onSuccess: () => setIsSentEmail(true),
@@ -27,7 +27,7 @@ const useVerifyMutation = ({ email, isValidCategory }: UseVerifyMutationOptions)
     verifyEmailMutation(email);
   };
 
-  return { isSentEmail, handleVerifyEmail };
+  return { isSentEmail, handleVerifyEmail, isVerifyingPending };
 };
 
 export default useVerifyMutation;

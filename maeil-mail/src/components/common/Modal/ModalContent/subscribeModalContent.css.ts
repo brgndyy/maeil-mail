@@ -61,6 +61,7 @@ export const emailWrapper = style({
   display: 'flex',
   justifyContent: 'center',
   flexDirection: 'column',
+  alignItems: 'center',
 });
 
 export const inputWrapper = style({
@@ -68,6 +69,7 @@ export const inputWrapper = style({
   justifyContent: 'space-around',
   alignItems: 'center',
   minHeight: '7rem',
+  width: '100%',
 });
 
 export const buttonWrapper = style({
