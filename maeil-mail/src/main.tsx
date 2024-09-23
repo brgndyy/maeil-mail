@@ -13,6 +13,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import QueryErrorBoundary from './components/error/QueryErrorBoundary';
 import AllQuestionPage from './pages/AllQuestionPage/AllQuestionPage';
 import PolicyPage from './pages/Policy/PolicyPage';
+import LoadingSpinner from './components/common/LoadingSpinner/LoadingSpinner';
 
 const client = new QueryClient({
   defaultOptions: {
@@ -47,50 +48,50 @@ export const router = createBrowserRouter(
   },
 );
 
-async function enableMocking() {
-  if (process.env.NODE_ENV !== 'development') {
-    return;
-  }
+// async function enableMocking() {
+//   if (process.env.NODE_ENV !== 'development') {
+//     return;
+//   }
 
-  const { worker } = await import('./mocks/browser');
+//   const { worker } = await import('./mocks/browser');
 
-  // `worker.start()` returns a Promise that resolves
-  // once the Service Worker is up and ready to intercept requests.
-  return worker.start();
-}
+//   // `worker.start()` returns a Promise that resolves
+//   // once the Service Worker is up and ready to intercept requests.
+//   return worker.start();
+// }
 
-enableMocking().then(() => {
-  createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-      <QueryClientProvider client={client}>
-        <QueryErrorBoundary>
-          <HelmetProvider>
-            <Suspense fallback={<div>로딩중!</div>}>
-              <MainWrapper>
-                <RouterProvider router={router} />
-                <ToastContainer />
-              </MainWrapper>
-            </Suspense>
-          </HelmetProvider>
-        </QueryErrorBoundary>
-      </QueryClientProvider>
-    </StrictMode>,
-  );
-});
+// enableMocking().then(() => {
+//   createRoot(document.getElementById('root')!).render(
+//     <StrictMode>
+//       <QueryClientProvider client={client}>
+//         <QueryErrorBoundary>
+//           <HelmetProvider>
+//             <Suspense fallback={<div>로딩중!</div>}>
+//               <MainWrapper>
+//                 <RouterProvider router={router} />
+//                 <ToastContainer />
+//               </MainWrapper>
+//             </Suspense>
+//           </HelmetProvider>
+//         </QueryErrorBoundary>
+//       </QueryClientProvider>
+//     </StrictMode>,
+//   );
+// });
 
-// createRoot(document.getElementById('root')!).render(
-//   <StrictMode>
-//     <QueryClientProvider client={client}>
-//       <QueryErrorBoundary>
-//         <HelmetProvider>
-//           <Suspense fallback={<div>로딩중!</div>}>
-//             <MainWrapper>
-//               <RouterProvider router={router} />
-//               <ToastContainer />
-//             </MainWrapper>
-//           </Suspense>
-//         </HelmetProvider>
-//       </QueryErrorBoundary>
-//     </QueryClientProvider>
-//   </StrictMode>,
-// );
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <QueryClientProvider client={client}>
+      <QueryErrorBoundary>
+        <HelmetProvider>
+          <Suspense fallback={<LoadingSpinner />}>
+            <MainWrapper>
+              <RouterProvider router={router} />
+              <ToastContainer />
+            </MainWrapper>
+          </Suspense>
+        </HelmetProvider>
+      </QueryErrorBoundary>
+    </QueryClientProvider>
+  </StrictMode>,
+);
