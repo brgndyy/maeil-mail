@@ -66,7 +66,7 @@ export const router = createBrowserRouter(
 //       <QueryClientProvider client={client}>
 //         <QueryErrorBoundary>
 //           <HelmetProvider>
-//             <Suspense fallback={<div>로딩중!</div>}>
+//             <Suspense fallback={<LoadingSpinner />}>
 //               <MainWrapper>
 //                 <RouterProvider router={router} />
 //                 <ToastContainer />

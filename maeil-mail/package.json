@@ -30,6 +30,7 @@
     "@uiw/codemirror-extensions-classname": "^4.23.0",
     "@uiw/codemirror-themes": "^4.23.0",
     "@vanilla-extract/vite-plugin": "^4.0.15",
+    "@vitejs/plugin-legacy": "^5.4.2",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
